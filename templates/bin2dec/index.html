@@ -1,0 +1,17 @@
+{% extends "home/base.html" %}
+{% block content %} 
+    <form method="post">
+        {% csrf_token %}
+        <label for="binary">Insira um número binário</label>
+        <br>
+        <input type="text" name="binary" placeholder="Ex: 1001001">
+        <input type="hidden" name="next" value="{{ next }}">
+        <br>
+        <button type="submit">Converter</button>
+    </form>
+    {% if binary %}
+        <br>
+        <br>
+        <p>O valor é: {{ decimal }}</p>
+    {% endif %}
+{% endblock content %}
