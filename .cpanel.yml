@@ -1,7 +1,5 @@
 deployment:
   tasks:
-    - /bin/cp readme.md $NEWDEPLOYPATH
-    - /bin/cp -R . $NEWDEPLOYPATH
-    - source /home/lorejfok/virtualenv/turtle_django/3.11/bin/activate && cd /home/lorejfok/turtle_django
-    - pip install -r requirements.txt
-    - 
+  - export DEPLOYPATH=/home/lorejfok/turtle_django
+  - /bin/cp -R . $DEPLOYPATH
+  - source /home/lorejfok/virtualenv/turtle_django/3.11/bin/activate && cd /home/lorejfok/turtle_django && pip install -r requirements.txt
