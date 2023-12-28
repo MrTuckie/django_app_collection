@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lorencini.tech']
+ALLOWED_HOSTS = ['turtle.lorencini.tech']
 
 
 # Application definition

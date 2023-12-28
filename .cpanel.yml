@@ -1,9 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/lorejfok/turtle_django
-    - /bin/cp readme.md $DEPLOYPATH
-    - /bin/cp -R . $DEPLOYPATH
-    - python3 -m venv $DEPLOYPATH/venv
-    - source $DEPLOYPATH/venv/bin/activate
-    - pip install -r $DEPLOYPATH/requirements.txt
-    - python $DEPLOYPATH/manage.py runserver --settings=src.prod_settings
+    - /bin/cp readme.md $NEWDEPLOYPATH
+    - /bin/cp -R . $NEWDEPLOYPATH
