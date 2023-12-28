@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/lorejfok/public_html
+    - export DEPLOYPATH=/home/lorejfok/turtle_django
     - /bin/cp readme.md $DEPLOYPATH
     - /bin/cp -R . $DEPLOYPATH
     - python3 -m venv $DEPLOYPATH/venv
