@@ -51,6 +51,14 @@ jobs:
         REMOTE_USER: ${{ vars.REMOTE_USER }}
         REMOTE_PORT: ${{ vars.REMOTE_PORT }}
         TARGET: ${{ vars.TARGET }}
+        SCRIPT_BEFORE: |
+          echo "Script before"  
+          whoami
+          ls -al
+          echo "Host lorencini.tech
+            HostKeyAlgorithms +ssh-rsa
+            PubkeyAcceptedKeyTypes +ssh-rsa" >> ~/.ssh/config
+          
     - name: Install Dependencies
       run: |
         echo "Installing dependencies...s"
