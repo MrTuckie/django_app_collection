@@ -28,3 +28,33 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10']
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Deploy to Namecheap
+      uses: easingthemes/ssh-deploy@main
+      with: 
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_NC_KEY }}
+        REMOTE_HOST: ${{ vars.REMOTE_HOST }}
+        REMOTE_USER: ${{ vars.REMOTE_USER }}
+        REMOTE_PORT: ${{ vars.REMOTE_PORT }}
+        TARGET: ${{ vars.TARGET }}
+    - name: Install Dependencies
+      run: |
+        echo "Installing dependencies...s"
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run server
+      run: |
+        python manage.py runserver
