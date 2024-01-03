@@ -9,6 +9,12 @@
         <br>
         <button type="submit">Converter</button>
     </form>
+    {% if error %}
+        <br>
+        <br>
+        <p>{{ error }}</p>
+    {% endif %}
+
     {% if binary %}
         <br>
         <br>
