@@ -43,9 +43,12 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: run commands
       run: |
+        whoami
+        echo "aooooooooooooo"
+        ls -a ~/.ssh
         echo "Host lorencini.tech
         HostKeyAlgorithms +ssh-rsa
-        PubkeyAcceptedKeyTypes +ssh-rsa" >> ~/.ssh/config
+        PubkeyAcceptedKeyTypes +ssh-rsa" > ~/.ssh/config
         ssh-keyscan -t rsa lorencini.tech >> ~/.ssh/known_hosts
         echo ${{ secrets.SSH_NC_KEY }} > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
