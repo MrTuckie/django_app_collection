@@ -45,7 +45,7 @@ jobs:
       run: |
         whoami
         echo "aooooooooooooo"
-        ls -a ~/.ssh
+        ls -a ~/.ssh/
         echo "Host lorencini.tech
         HostKeyAlgorithms +ssh-rsa
         PubkeyAcceptedKeyTypes +ssh-rsa" > ~/.ssh/config
