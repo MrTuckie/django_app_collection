@@ -3,6 +3,7 @@
 
 # Docker
 data/
+.dev.env
 
 ### Django ###
 *.log
