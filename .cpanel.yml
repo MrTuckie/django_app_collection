@@ -2,4 +2,4 @@ deployment:
   tasks:
   - export DEPLOYPATH=/home/lorejfok/turtle_django
   - /bin/cp -R . $DEPLOYPATH
-  - source /home/lorejfok/virtualenv/turtle_django/3.11/bin/activate && cd /home/lorejfok/turtle_django && pip install -r requirements.txt
+  - source /home/lorejfok/virtualenv/turtle_django/3.11/bin/activate && cd /home/lorejfok/turtle_django && pip install -r requirements.txt && python manage.py migrate
