@@ -3,4 +3,4 @@ deployment:
   - export DEPLOYPATH=/home/lorejfok/django_root
   - /bin/rm $DEPLOYPATH/*.* 
   - /bin/cp -R . $DEPLOYPATH
-  - source /home/lorejfok/virtualenv/django_root/3.11/bin/activate && cd /home/lorejfok/django_root && pip install -r requirements.txt
+  - source /home/lorejfok/virtualenv/django_root/3.11/bin/activate && cd /home/lorejfok/django_root
