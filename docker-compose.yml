@@ -1,0 +1,42 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    container_name: django_db
+    restart: always
+    networks:
+      - django_net
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+    volumes:
+      - ./data:/var/lib/mysql
+
+  web:
+    build: .
+    container_name: django_app
+    command: python manage.py runserver 0.0.0.0:8000 --settings=src.dev_settings
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - django_net
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/code
+
+networks:
+  django_net:
+    driver: bridge
+
+

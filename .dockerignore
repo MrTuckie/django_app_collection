@@ -1,0 +1,7 @@
+*.env
+.github
+.git
+.gitignore
+venv/
+.cpanel.yml
+db.sqlite3
