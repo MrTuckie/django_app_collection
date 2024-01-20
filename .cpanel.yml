@@ -1,6 +1,6 @@
 deployment:
   tasks:
-  - export DEPLOYPATH=/home/lorejfok/turtle_django
+  - export DEPLOYPATH=/home/lorejfok/django_root
   - /bin/rm $DEPLOYPATH/*.* 
   - /bin/cp -R . $DEPLOYPATH
-  - source /home/lorejfok/virtualenv/turtle_django/3.11/bin/activate && cd /home/lorejfok/turtle_django && pip install -r requirements.txt
+  - source /home/lorejfok/virtualenv/django_root/3.11/bin/activate && cd /home/lorejfok/django_root && pip install -r requirements.txt
