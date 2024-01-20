@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Application definition
 
-AMBIENT = 'dev'
+AMBIENT = 'prod'
 if AMBIENT == 'prod':
     load_dotenv()
     ALLOWED_HOSTS = ['turtle.lorencini.tech', '127.0.0.1']

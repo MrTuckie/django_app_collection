@@ -5,5 +5,3 @@ from django.test import TestCase
 class Bin2DecTests(TestCase):
     def test_bin2dec(self):
         self.assertEqual(1, 1)
-    def test_bin2dec_2(self):
-        self.assertEqual(2, 1)
