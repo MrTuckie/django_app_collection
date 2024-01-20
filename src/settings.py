@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 AMBIENT = 'prod'
 if AMBIENT == 'prod':
     load_dotenv()
-    ALLOWED_HOSTS = ['turtle.lorencini.tech', '127.0.0.1']
+    ALLOWED_HOSTS = ['django.lorencini.tech', '127.0.0.1']
     DEBUG = False
     INSTALLED_APPS = [
         'django.contrib.admin',
