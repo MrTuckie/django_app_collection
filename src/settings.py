@@ -52,6 +52,7 @@ INSTALLED_APPS += [
     'home',
     'bin2dec',
     'api',
+    'electricity_bill',
     'rest_framework',
 ]
 
