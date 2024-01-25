@@ -29,4 +29,4 @@ jobs:
       run: |
         python manage.py test 
       env:
-        SECRET_KEY: ${{ env.SECRET_KEY}}
+        SECRET_KEY: ${{ secrets.SECRET_KEY}}
