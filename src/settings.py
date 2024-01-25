@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Application definition
 
-AMBIENT = 'prod'
+AMBIENT = 'dev'
 if AMBIENT == 'prod':
     load_dotenv()
     ALLOWED_HOSTS = ['django.lorencini.tech', '127.0.0.1']
